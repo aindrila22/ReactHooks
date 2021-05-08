@@ -1,36 +1,41 @@
-import React, { useEffect } from "react";
-import { useForm } from "./UseForm";
+import React, { useState } from "react";
+import { useFetch } from "./UseFetch";
 
 function UseEffect() {
-  const [values, handleChange] = useForm({
-    email: "",
-    password: "",
-    fullname: "",
-  });
+  const [count, setCount] = useState(0);
+  const { data, loading } = useFetch(`http://numbersapi.com/${count}/trivia`);
+  /*() =>
+  JSON.parse(localStorage.getItem("count"))
+
   useEffect(() => {
-    console.log("render");
-  }, [values]);
+    localStorage.setItem("count", JSON.stringify(count));
+  }, [count]);*/
 
   return (
     <div className="form">
-      <input
-        name="email"
-        placeholder="abc@Abc.com"
-        value={values.email}
-        onChange={handleChange}
-      />
-      <input
-        name="firstname"
-        placeholder="your fullname"
-        value={values.firstname}
-        onChange={handleChange}
-      />
-      <input
-        name="password"
-        placeholder="*******"
-        value={values.password}
-        onChange={handleChange}
-      />
+      <div
+        style={{
+          display: "grid",
+          flex: "wrap",
+          placeItems: "center",
+          marginLeft: "20px",
+          color: "rgb(235, 128, 128)",
+        }}
+      >
+        <h4>{/*!data*/ loading ? "loading..." : data}</h4>
+      </div>
+      <br />
+      <div>
+        <h6>Count : {count}</h6>
+      </div>
+      <br />
+      <button
+        className="btn1"
+        style={{ outlineWidth: "0" }}
+        onClick={() => setCount((c) => c + 1)}
+      >
+        Increment
+      </button>
     </div>
   );
 }

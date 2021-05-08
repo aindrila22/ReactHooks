@@ -44,8 +44,16 @@
     width: 100%;
    
 }
-.form > input{
-width: 50%;
+.forms{
+  margin-top: 50px;
+  display: grid;
+  place-items: center;
+  flex-direction: column;
+  width: 100%;
+ 
+}
+.forms > input{
+width: 40%;
 margin-top: 20px;
 padding: 10px;
 color:#352e2c;
