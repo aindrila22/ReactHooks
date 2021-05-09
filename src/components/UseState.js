@@ -2,6 +2,9 @@ import React, { useRef, useState } from "react";
 import { useForm } from "./UseForm";
 
 function UseState() {
+  //useState is a Hook (function) that have state variables in functional components
+  //to pass the initial state to this function which returns a variable with the current state value
+  //and another function to update this value.
   const [count1, setCount1] = useState(10);
   const [count2, setCount2] = useState(20);
   const [values, handleChange] = useForm({
@@ -9,6 +12,7 @@ function UseState() {
     password: "",
     fullname: "",
   });
+  //In plain JavaScript we use getElementById or querySelector to select a DOM node.In React we use the useRef
   const inputRef = useRef();
   return (
     <div className="usestate">

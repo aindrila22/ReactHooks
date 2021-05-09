@@ -47,6 +47,16 @@ const Navbar = () => {
                       UseEffect
                     </NavLink>
                   </li>
+                  <li className="nav-item active">
+                    <NavLink
+                      exact
+                      activeClassName="menu_active"
+                      className="nav-link"
+                      to="/value"
+                    >
+                      UseLayoutEffect
+                    </NavLink>
+                  </li>
                 </ul>
               </div>
             </nav>

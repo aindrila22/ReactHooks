@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import UseState from "./components/UseState";
 import Navbar from "./Navbar";
 import UseEffect from "./components/UseEffect";
+import UseLayoutEffectPage from "./components/UseLayoutEffect";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={UseState} />
           <Route exact path="/form" component={UseEffect} />
+          <Route exact path="/value" component={UseLayoutEffectPage} />
         </Switch>
       </BrowserRouter>
     </>

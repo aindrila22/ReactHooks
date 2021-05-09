@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { useFetch } from "./UseFetch";
 
-function UseEffect() {
+function UseEffect(query) {
   const [count, setCount] = useState(0);
   const { data, loading } = useFetch(`http://numbersapi.com/${count}/trivia`);
-  /*() =>
-  JSON.parse(localStorage.getItem("count"))
+  // const [employees, setEmployees] = useState([]);
 
-  useEffect(() => {
-    localStorage.setItem("count", JSON.stringify(count));
-  }, [count]);*/
-
+  // useEffect(() => {
+  //   async function fetchEmployees() {
+  //     const response = await fetch(`/employees?q=${encodeURIComponent(query)}`);
+  //     const fetchedEmployees = await response.json(response);
+  //     setEmployees(fetchedEmployees);
+  //   }
+  //   fetchEmployees();
+  // }, [query]);
   return (
     <div className="form">
       <div
@@ -36,6 +39,10 @@ function UseEffect() {
       >
         Increment
       </button>
+      {/*  <br />
+      {employees.map((name) => (
+        <div>{name}</div>
+      ))}*/}
     </div>
   );
 }
